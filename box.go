@@ -100,7 +100,7 @@ func (b *box) RemoveAllCircles() error {
 	var count int
 	for i := 0; i < len(b.shapes); i++ {
 		shape := b.shapes[i]
-		_, ok := shape.(Circle)
+		_, ok := shape.(*Circle)
 		if ok {
 			copy(b.shapes[i:], b.shapes[i+1:])
 			b.shapes[len(b.shapes)-1] = nil
